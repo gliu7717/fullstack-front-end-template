@@ -1,18 +1,48 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router,Switch, Route} from 'react-router-dom'
-const routes =[]
-export const Routes = () =>{
+import React from 'react';
+import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom';
+
+import { HomePage } from './home';
+import { AddIngredientPage } from './ingredients';
+import { RecipeSearchPage } from './recipes';
+import { ShoppingListPage } from './shopping-list';
+
+const routes = [
+    {
+        path: '/',
+        Component : HomePage,
+        exact : true,
+    },
+    {
+        path: '/add-ingredient',
+        Component : AddIngredientPage,
+        exact : true,
+    },
+    {
+        path: '/recipes',
+        Component : RecipeSearchPage,
+        exact : true,
+    },
+    {
+        path: '/shopping-list',
+        Component : ShoppingListPage,
+        exact : true,
+    },
+
+
+ ];
+
+ export const MyRoutes = () => (
     <Router>
-        <Switch>
-            {routes.map((route,index)=> (
-                <Route
+        <Routes>
+        {routes.map((route, index) => (
+            <Route
                 key={index}
                 path={route.path}
                 exact={route.exact}
-                >
-                    <route.Component/>
-                </Route>
-            ))}
-        </Switch>
+                element={<route.Component />} 
+            >
+            </Route>
+        ))}
+        </Routes>
     </Router>
-}
+)
