@@ -12,14 +12,13 @@ code {
     monospace;
 }
 
-h1 {
-  border-bottom: 2px solid #ddd;
-  margin: 0;
-  padding: 16px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-  background-color: #ffa31a;
+  background-color: #3792cb;
   border: none;
   border-radius: 8px;
   color: white;
@@ -31,6 +30,10 @@ button {
   font-weight: bold;
   outline: none;
   padding: 16px;
+}
+
+button:disabled {
+  background-color: #ddd;
 }
 
 input, select {
@@ -47,13 +50,34 @@ input, select {
   padding: 16px;
 }
 
-a {
-  text-decoration: none;
+nav {
+  border-bottom: 2px solid #eee;
+  padding: 16px;
 }
 
-.page {
-  width: 100vw;
-  height: 100vh;
+.app-heading {
+  display: inline-block;
+  margin: 8px;
+}
+
+.logged-in-as {
+  float: right;
+  margin-right: 16px;
+}
+
+.sign-out-button {
+  float: right;
+}
+
+.error-message {
+  background-color: #ffcccb;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.section-heading {
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 16px;
 }
 
 .centered-container {
@@ -61,74 +85,26 @@ a {
   margin: auto;
 }
 
-.back-button {
-  margin: 16px;
-}
-
-.page-container {
-    display: flex;
-}
-
-.column {
-    flex: 1;
-}
-
-.list-container {
-  padding: 16px;
-  margin: auto;
-  max-width: 600px;
-}
-
 .list-item {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
+}
+
+.new-conversation-list-item {
   display: flex;
   padding: 16px;
 }
 
-.list-item > h3 {
-  flex: 2;
-}
-
-.list-item > p {
-  align-items: center;
-  display: flex;
-  flex: 6;
-  padding-left: 16px;
-}
-
-.list-item > .right-action {
+.new-conversation-list-item p {
   flex: 1;
+}
+
+.input-form {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 16px 0;
 }
 
-.small-x {
-  background-color: #ccc;
-  border-radius: 50%;
-  cursor: pointer;
-  height: 24px;
-  padding-top: 1px;
-  position: relative;
-  text-align: center;
-  width: 24px;
-}
-
-.the-x {
-  font-weight: bold;
-  left: 7px;
-  position: absolute;
-  top: 2px;
-}
-
-.search-list-item {
-  cursor: pointer;
-  padding: 16px;
-  border-bottom: 1px solid #ddd;
-}
-
-.search-list-item:hover {
-  background-color: #eee;
+.input-form input {
+  flex: 1;
 }
 
 .full-width {
@@ -142,8 +118,4 @@ a {
 
 .space-after {
   margin-bottom: 16px;
-}
-
-.shopping-list-button {
-  background-color: #ADE25D;
 }
